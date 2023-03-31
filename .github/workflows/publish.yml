@@ -26,4 +26,4 @@ jobs:
         run: echo "tag=$(date +'%Y%m%d.%H%M%S')" >> $GITHUB_OUTPUT
         id: timestamp
       - name: Push image to DockerHub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/items:${{ steps.project.outputs.tag }}-:${{steps-timestamp.outputs.tag}}
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/items:${{ steps.project.outputs.tag }}-:${{steps.timestamp.outputs.tag}}
